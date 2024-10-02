@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Platform - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #b5651d;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .nav-links i {
+            margin-right: 5px;
+        }
+
+
+        .nav-links a:hover, .nav-links .active {
+            text-decoration: underline;
+        }
+
+        .hero-section {
+    position: relative;
+    background-image: url('ocpbg2.jpg');
+    background-size: 100% auto; 
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    background-repeat: no-repeat; 
+}
+.hero-section::before {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); 
+    z-index: 1; 
+}
+
+.hero-section h1 {
+    position: relative; 
+    z-index: 2; 
+    font-size: 36px; 
+}
+
+.hero-section p {
+    position: relative; 
+    z-index: 2; 
+    font-size: 20px; 
+    margin-top: 10px; 
+}
+
+
+        .hero-section .cta-button {
+            background-color: #fff;
+            color: orange;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero-section .cta-button:hover {
+            background-color: #ffcc80;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .popular-courses {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .course-card {
+            background-color: white;
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .course-card h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #cc8400;
+        }
+
+    .cta-button {
+    margin-top: 20px;
+}
+       
+.testimonial-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline-item {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    position: relative;
+    padding-left: 60px;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+}
+.timeline-image {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.timeline-image img {
+    width: 100%;  
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.timeline-item.left {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.timeline-item.right {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    text-align: right;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: orange; 
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: #b5651d; 
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px white;
+}
+.welcome-message {
+    text-align: center; 
+    margin: 20px auto; 
+    padding: 20px 40px; 
+    max-width: 800px; 
+    background-image: url('C:\xampp\htdocs\msd\ocpbackground.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* Adding a semi-transparent overlay */
+.welcome-message::before {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 8px; 
+    z-index: 1;
+}
+
+.welcome-message p {
+    font-size: 24px; 
+    color: #333; 
+    font-style: italic; 
+    position: relative; 
+    z-index: 2; 
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Online Course Platform</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="#">Community</a>
+            <a href="#">Categories</a>
+            <a href="courses.html">Courses</a>
+            <a href="categories.html">My Learning</a>
+            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div>
+            <h1>Master New Skills with Our Online Courses</h1>
+            <div class="welcome-message">
+                <p>"Explore your personalized learning journey! Discover courses tailored to your interests and take your skills to the next level."</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <h2 class="section-title">Popular Courses</h2>
+
+    <div class="popular-courses">
+        <div class="course-card">
+            <img src="profile.2.jpg" alt="Course 1">
+            <h3>Introduction to Python</h3>
+            <p>Learn the basics of Python programming from scratch with this beginner-friendly course.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="course2.jpg" alt="Course 2">
+            <h3>Web Development Mastery</h3>
+            <p>Master front-end and back-end web development to build responsive, interactive websites.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="ds3.jpg" alt="Course 3">
+            <h3>Data Science Bootcamp</h3>
+            <p>Dive deep into data analysis, visualization, and machine learning with this intensive bootcamp.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="ml.jpg" alt="Course 4">
+            <h3>AI and Machine Learning</h3>
+            <p>Discover the world of artificial intelligence and machine learning through hands-on projects.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="cyber2.jpg" alt="Course 5">
+            <h3>Cybersecurity Essentials</h3>
+            <p>Learn the core concepts of cybersecurity and how to protect data in today's digital world.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="aws.jpg" alt="Course 6">
+            <h3>Cloud Computing with AWS</h3>
+            <p>Master cloud architecture and services using AWS, the world’s leading cloud platform.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/300x180" alt="Course 7">
+            <h3>Blockchain for Beginners</h3>
+            <p>Understand the fundamentals of blockchain technology and its applications in various industries.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/300x180" alt="Course 8">
+            <h3>UI/UX Design Fundamentals</h3>
+            <p>Learn the principles of user interface and user experience design to create intuitive apps.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/300x180" alt="Course 9">
+            <h3>DevOps Fundamentals</h3>
+            <p>Explore the practices of DevOps, and streamline your software development lifecycle.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/300x180" alt="Course 10">
+            <h3>Mobile App Development</h3>
+            <p>Build powerful mobile apps with Android and iOS using modern technologies like Flutter.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/300x180" alt="Course 11">
+            <h3>Big Data Analytics</h3>
+            <p>Gain insights into big data processing and analytics with tools like Hadoop and Spark.</p>
+            <button>Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/300x180" alt="Course 12">
+            <h3>Digital Marketing</h3>
+            <p>Learn effective strategies for online marketing, SEO, and social media advertising.</p>
+            <button>Enroll Now</button>
+        </div>
+    </div>
+
+    <h2 class="testimonial-title">What Our Learners Say</h2>
+<div class="timeline">
+    <div class="timeline-item left">
+        <div class="timeline-image">
+            <img src="profile1.jpeg" alt="John Doe"> 
+        </div>
+        <div class="timeline-content">
+            <h4>John Doe</h4>
+            <p><i>"This platform has helped me land my dream job. The courses are top-notch and easy to follow!"</i></p>
+        </div>
+    </div>
+    <div class="timeline-item right">
+        <div class="timeline-image">
+            <img src="review2.jpeg" alt="Jane Smith"> 
+        </div>
+        <div class="timeline-content">
+            <h4>Jane Smith</h4>
+            <p><i>"The instructors are very knowledgeable, and the platform is user-friendly. I feel more confident in my skills now."</i></p>
+        </div>
+    </div>
+    <div class="timeline-item left">
+        <div class="timeline-image">
+            <img src="images/profile3.jpg" alt="Alice Johnson"> 
+        </div>
+        <div class="timeline-content">
+            <h4>Alice Johnson</h4>
+            <p><i>"Great variety of courses! I've learned so much and am excited to continue my journey with this platform."</i></p>
+        </div>
+    </div>
+    <div class="timeline-item right">
+        <div class="timeline-image">
+            <img src="images/profile4.jpg" alt="Michael Brown"> 
+        </div>
+        <div class="timeline-content">
+            <h4>Michael Brown</h4>
+            <p><i>"I love how interactive the courses are. The assignments and projects really helped me put theory into practice."</i></p>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Online Course Platform. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
